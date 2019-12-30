@@ -1,6 +1,6 @@
 FROM  	ubuntu:16.04
 
-MAINTAINER "sonnyhcl@163.com"
+MAINTAINER microd
 
 ENV 	DEBIAN_FRONTEND=noninteractive
 ENV 	LC_ALL=en_US.UTF-8 
@@ -8,7 +8,7 @@ ENV 	LANG=en_US.UTF-8
 ENV 	LANGUAGE=en_US.UTF-8 
 ENV 	TZ=Asia/Shanghai
 
-ARG 	installer_url="https://cloud.deng-quan.com"
+ARG 	installer_url="http://cloud.deng-quan.com"
 ARG 	version=2018.3
 ARG 	user=microd
 
@@ -28,7 +28,7 @@ RUN 	dpkg --add-architecture i386 	&& \
     	apt-get install -y -qq iputils-ping sudo rsync apt-utils x11-utils
 
 # Required tools and libraries of Petalinux.
-# See in: ug1144-petalinux-tools-reference-guide, 2018.2
+# See in: ug1144-petalinux-tools-reference-guide, 2018.3
 RUN 	apt-get install -y -qq --no-install-recommends \
 	tofrodos iproute2 gawk xvfb gcc g++ wget build-essential \
 	checkinstall libreadline-gplv2-dev libncursesw5-dev libssl-dev \
