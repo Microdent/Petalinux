@@ -54,7 +54,7 @@ WORKDIR /home/$user/project
 
 COPY 	noninteractive-install.sh .
 
-RUN 	chmod +x noninteractive-install.sh
+RUN 	sudo chmod +x noninteractive-install.sh
 
 RUN 	wget -q ${installer_url}/petalinux-v${version}-final-installer.run  	&& \
 	chmod a+x petalinux-v${version}-final-installer.run                 	&& \
